@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vayu
+
+**Ride the wind of the market.**
+
+Vayu is an autonomous trading platform built on **Arc** (Circle's stablecoin-native Layer 1).  
+It combines a beautiful atmospheric interface with an AI agent called **Aku** that can understand natural language strategies and execute them on-chain.
+
+---
+
+## Features
+
+- **Aku** – Conversational AI that turns natural language into on-chain strategies
+- **Strategy Vaults** – Deposit USDC and let Aku manage strategies within your guardrails
+- **Non-custodial** – You stay in full control of your funds
+- **Session Permissions** – Grant limited rights to Aku without giving full access
+- **Built for Arc** – Native USDC gas, sub-second finality, and agentic design
+- Atmospheric dark UI with live wind visualizations
+
+---
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS, Framer Motion
+- **Wallet**: wagmi + viem
+- **Smart Contracts**: Solidity + Foundry
+- **Chain**: Arc Testnet (Chain ID `5042002`)
+
+---
+
+## Deployed Contracts (Arc Testnet)
+
+| Contract            | Address                                      |
+|---------------------|----------------------------------------------|
+| PermissionManager   | `0x080519a7D9dCdB83999644Daa205dDE2D92e2cb2` |
+| StrategyVault       | `0xc9aD3349054B22f5fa8F33fCf3B3ea446fE9BF4F` |
+| VayuRouter          | `0x3D148e412985a69A41F77CB81C4f15C071dCce4E` |
+| USDC                | `0x3600000000000000000000000000000000000000` |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/rajdeblol/Vayu.git
+cd Vayu
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Smart Contracts
 
-## Learn More
+The contracts are located in `packages/contracts`.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd packages/contracts
+forge build
+forge test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
